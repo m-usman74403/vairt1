@@ -136,13 +136,13 @@
   .hero-inner{width:100%;}
   .hero-panel{
     border-radius:22px;
-    padding:44px 44px 36px;
-    max-width:640px;
+    padding:44px 48px 40px;
+    max-width:800px;
   }
   .steps-chip{display:flex;gap:0;align-items:center;font-size:12.5px;font-weight:700;color:var(--paper);margin-bottom:22px;opacity:.85;}
   .steps-chip span{position:relative;padding:0 14px 0 0;}
   .steps-chip span:not(:last-child)::after{content:"";position:absolute;right:5px;top:50%;transform:translateY(-50%);width:4px;height:4px;border-radius:50%;background:var(--blue);}
-  .hero h1{font-size:clamp(32px,4.2vw,50px);line-height:1.08;font-weight:800;letter-spacing:-.02em;margin:0 0 18px;color:var(--paper);}
+  .hero h1{font-size:clamp(28px,3.6vw,44px);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:0 0 18px;color:var(--paper);white-space:normal;}
   .hero h1 span{color:var(--blue);}
   .hero p{font-size:16.5px;line-height:1.6;color:var(--paper-80);margin:0 0 28px;max-width:460px;}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px;}
@@ -180,6 +180,7 @@
   .pill-tabs button.on{background:var(--blue);color:var(--paper);}
 
   .prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .prop-grid.cols-2{grid-template-columns:repeat(2,1fr);}
   .prop-card{border-radius:20px;overflow:visible;position:relative;}
   .prop-photo{height:220px;border-radius:20px;overflow:hidden;position:relative;}
   .prop-photo img{width:100%;height:100%;object-fit:cover;}
@@ -195,11 +196,11 @@
   .prop-figs div label{display:block;font-size:10.5px;color:var(--ink-65);margin-bottom:3px;}
   .prop-figs div b{font-size:14px;font-weight:800;}
   .prop-body .btn{width:100%;justify-content:center;}
-  @media (max-width:900px){ .prop-grid{grid-template-columns:1fr;} }
+  @media (max-width:900px){ .prop-grid{grid-template-columns:1fr;} .prop-grid.cols-2{grid-template-columns:1fr;} }
   .ledger-foot{display:flex;justify-content:center;margin-top:44px;}
 
   /* ---------- Strategy timeline ---------- */
-  .strategy-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start;}
+  .strategy-wrap{display:grid;grid-template-columns:3fr 2fr;gap:64px;align-items:start;}
   .strategy-card{color:var(--paper);border-radius:20px;padding:40px 34px;position:sticky;top:100px;}
   .strategy-card .icon{width:44px;height:44px;border-radius:12px;background:var(--paper-18);display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
   .strategy-card h3{font-size:23px;font-weight:800;line-height:1.25;margin:0 0 14px;}
@@ -209,9 +210,9 @@
 
   .timeline{position:relative;padding-left:8px;}
   .tl-item{display:grid;grid-template-columns:52px 1fr;gap:20px;position:relative;padding-bottom:38px;}
-  .tl-item:last-child{padding-bottom:0;}
+  .tl-item[data-step="5"]{padding-bottom:0;}
   .tl-item::before{content:"";position:absolute;left:25px;top:52px;bottom:0;width:1px;background:var(--ink-10);}
-  .tl-item:last-child::before{display:none;}
+  .tl-item[data-step="5"]::before{display:none;}
   .tl-num{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--ink-10);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--ink-65);background:var(--paper);position:relative;z-index:1;}
   .tl-item.active .tl-num{background:var(--blue);border-color:var(--blue);color:var(--paper);}
   .tl-item h4{margin:6px 0 6px;font-size:17px;font-weight:800;}
@@ -224,12 +225,12 @@
   .journey h2.head{color:var(--paper);}
   .journey p.lede{color:var(--paper-80);}
   .stepper{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:10px;}
-  .stepper::before{content:"";position:absolute;top:15px;left:6%;right:6%;height:1px;background:var(--paper-18);}
-  .step{position:relative;padding-right:20px;}
+  .stepper::before{content:"";position:absolute;top:15px;left:12.5%;right:12.5%;height:1px;background:var(--paper-18);}
+  .step{position:relative;padding-right:0;display:flex;flex-direction:column;align-items:center;text-align:center;}
   .step .dot{width:32px;height:32px;border-radius:50%;background:var(--ink);border:1.5px solid var(--paper-35);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;color:var(--paper);margin-bottom:20px;position:relative;z-index:1;}
   .step:first-child .dot{background:var(--blue);border-color:var(--blue);}
   .step h4{font-size:16px;font-weight:800;margin:0 0 8px;}
-  .step p{font-size:13.5px;color:var(--paper-80);line-height:1.55;margin:0;max-width:220px;}
+  .step p{font-size:13.5px;color:var(--paper-80);line-height:1.55;margin:0;max-width:220px;text-align:center;}
   .journey-cta{margin-top:52px;}
   @media (max-width:760px){ .stepper{grid-template-columns:1fr 1fr;row-gap:36px;} .stepper::before{display:none;} }
 
@@ -354,12 +355,11 @@
   .btn-outline-dark:hover .btn-arrow i:nth-child(3),.btn-outline-light:hover .btn-arrow i:nth-child(3){transition-delay:.08s;}
   .btn-outline-dark:hover .btn-arrow i,.btn-outline-light:hover .btn-arrow i{color:var(--paper) !important;}
 
-  /* ---------- Hero heading: force two lines everywhere ---------- */
-  .hero h1{font-size:clamp(21px,5.6vw,50px);}
+  /* ---------- Hero heading: keep line 1 on one line at typical widths ---------- */
   @media (max-width:480px){
     .wrap{padding:0 18px;}
     .hero-panel{padding:24px 18px;}
-    .hero h1{font-size:19px;line-height:1.28;letter-spacing:-.01em;}
+    .hero h1{font-size:20px;line-height:1.28;letter-spacing:-.01em;}
     .hero p{font-size:13.5px;}
   }
 
@@ -409,7 +409,7 @@
 
   /* ---------- Journey: icons, fill line, pulse, detail ---------- */
   .stepper{cursor:pointer;}
-  .stepper-fill{position:absolute;top:15px;left:6%;height:1px;background:var(--blue);width:0%;transition:width .6s cubic-bezier(.3,.7,.3,1);z-index:0;}
+  .stepper-fill{position:absolute;top:15px;left:12.5%;height:1px;background:var(--blue);width:0%;transition:width .6s cubic-bezier(.3,.7,.3,1);z-index:0;}
   .step .dot{transition:background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;}
   .step .si-icon{width:16px;height:16px;}
   .step:hover .dot{transform:scale(1.12);border-color:var(--blue);}
@@ -458,6 +458,26 @@
   .video-thumb.active{border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-14);}
   @media (max-width:900px){ .video-featured{height:340px;} .video-thumbs{grid-template-columns:repeat(2,1fr);} .vf-meta h3{font-size:20px;} }
   @media (max-width:560px){ .video-thumbs{grid-template-columns:1fr;} }
+
+  /* ---------- Back to top + scroll progress ---------- */
+  .back-to-top{
+    position:fixed;right:24px;bottom:24px;z-index:60;
+    width:52px;height:52px;border-radius:50%;
+    background:var(--paper-55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+    border:1px solid var(--paper-80);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;opacity:0;pointer-events:none;transform:translateY(14px);
+    transition:opacity .3s ease, transform .3s ease, background .3s ease;
+    padding:0;
+  }
+  .back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+  .back-to-top:hover{background:var(--ink);}
+  .back-to-top svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);}
+  .back-to-top .ring-bg{fill:none;stroke:var(--blue-14);stroke-width:2.5;}
+  .back-to-top .ring-fg{fill:none;stroke:var(--blue);stroke-width:2.5;stroke-linecap:round;transition:stroke-dashoffset .1s linear;}
+  .back-to-top .bt-arrow{position:relative;z-index:1;font-size:17px;font-weight:800;color:var(--ink);transition:color .3s ease, transform .2s ease;}
+  .back-to-top:hover .bt-arrow{color:var(--paper);transform:translateY(-2px);}
+  @media (max-width:480px){ .back-to-top{right:16px;bottom:16px;width:46px;height:46px;} }
 
   @media (prefers-reduced-motion: reduce){ *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
 </style>
@@ -536,12 +556,12 @@
         <p class="lede" style="margin-bottom:0;">Every listing is a single asset — reviewed, structured and reported on its own terms.</p>
       </div>
       <div class="pill-tabs">
-        <button class="on">Open · 3</button>
-        <button>Upcoming · 4</button>
+        <button class="on" data-panel="panelOpen">Open · 3</button>
+        <button data-panel="panelUpcoming">Upcoming · 4</button>
       </div>
     </div>
 
-    <div class="prop-grid">
+    <div class="prop-grid" id="panelOpen">
       <div class="prop-card">
         <div class="prop-photo">
           <img src="images/opportunity1.jpg" alt="V Plaza, Peoria, Illinois">
@@ -593,6 +613,80 @@
             <div><label>Target hold</label><b>5 years*</b></div>
           </div>
           <button class="btn btn-blue"><span class="btn-txt">Learn More</span><span class="btn-arrow"><i>›</i><i>›</i><i>›</i></span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-grid cols-2" id="panelUpcoming" style="display:none;">
+      <div class="prop-card">
+        <div class="prop-photo">
+          <img src="images/pp-img.jpg" alt="V Plaza Phase II, Peoria, Illinois">
+          <span class="prop-badge" style="background:#000000;">Coming Soon</span>
+        </div>
+        <div class="prop-body glass">
+          <div class="loc">222 NE Monroe St., Peoria, Illinois</div>
+          <h3>V Plaza — Phase II</h3>
+          <span class="prop-kind">Expansion + upgrade</span>
+          <div class="prop-figs">
+            <div><label>Target raise</label><b>$3.1M</b></div>
+            <div><label>Minimum</label><b>$25,000</b></div>
+            <div><label>Target hold</label><b>5 years*</b></div>
+          </div>
+          <button class="btn btn-outline-dark"><span class="btn-txt">Join Waitlist</span><span class="btn-arrow"><i>›</i><i>›</i><i>›</i></span></button>
+        </div>
+      </div>
+
+      <div class="prop-card">
+        <div class="prop-photo">
+          <img src="images/project-img.jpg" alt="Harbor Point Residences, Miami, Florida">
+          <span class="prop-badge" style="background:#000000;">Coming Soon</span>
+        </div>
+        <div class="prop-body glass">
+          <div class="loc">Brickell Waterfront, Miami, Florida</div>
+          <h3>Harbor Point Residences</h3>
+          <span class="prop-kind">Residential + income</span>
+          <div class="prop-figs">
+            <div><label>Target raise</label><b>$6.8M</b></div>
+            <div><label>Minimum</label><b>$25,000</b></div>
+            <div><label>Target hold</label><b>5 years*</b></div>
+          </div>
+          <button class="btn btn-outline-dark"><span class="btn-txt">Join Waitlist</span><span class="btn-arrow"><i>›</i><i>›</i><i>›</i></span></button>
+        </div>
+      </div>
+
+      <div class="prop-card">
+        <div class="prop-photo">
+          <img src="images/video-img2.jpg" alt="Midtown Commons, Austin, Texas">
+          <span class="prop-badge" style="background:#000000;">Coming Soon</span>
+        </div>
+        <div class="prop-body glass">
+          <div class="loc">East 6th District, Austin, Texas</div>
+          <h3>Midtown Commons</h3>
+          <span class="prop-kind">Mixed-use + retail</span>
+          <div class="prop-figs">
+            <div><label>Target raise</label><b>$5.4M</b></div>
+            <div><label>Minimum</label><b>$25,000</b></div>
+            <div><label>Target hold</label><b>5 years*</b></div>
+          </div>
+          <button class="btn btn-outline-dark"><span class="btn-txt">Join Waitlist</span><span class="btn-arrow"><i>›</i><i>›</i><i>›</i></span></button>
+        </div>
+      </div>
+
+      <div class="prop-card">
+        <div class="prop-photo">
+          <img src="images/video-img3.jpg" alt="Lakeshore Financial Center, Peoria, Illinois">
+          <span class="prop-badge" style="background:#000000;">Coming Soon</span>
+        </div>
+        <div class="prop-body glass">
+          <div class="loc">Downtown Peoria, Illinois</div>
+          <h3>Lakeshore Financial Center</h3>
+          <span class="prop-kind">Commercial + value-add</span>
+          <div class="prop-figs">
+            <div><label>Target raise</label><b>$2.9M</b></div>
+            <div><label>Minimum</label><b>$25,000</b></div>
+            <div><label>Target hold</label><b>5 years*</b></div>
+          </div>
+          <button class="btn btn-outline-dark"><span class="btn-txt">Join Waitlist</span><span class="btn-arrow"><i>›</i><i>›</i><i>›</i></span></button>
         </div>
       </div>
     </div>
@@ -801,11 +895,24 @@
   </div>
 </footer>
 
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 44 44">
+    <circle class="ring-bg" cx="22" cy="22" r="19"></circle>
+    <circle class="ring-fg" id="ringFg" cx="22" cy="22" r="19"></circle>
+  </svg>
+  <span class="bt-arrow">↑</span>
+</button>
+
 <script>
   document.querySelectorAll('.pill-tabs button').forEach(function(b){
     b.addEventListener('click', function(){
       document.querySelectorAll('.pill-tabs button').forEach(function(x){x.classList.remove('on');});
       b.classList.add('on');
+      var target = b.getAttribute('data-panel');
+      ['panelOpen','panelUpcoming'].forEach(function(id){
+        var el = document.getElementById(id);
+        if(el) el.style.display = (id === target) ? 'grid' : 'none';
+      });
     });
   });
 
@@ -844,7 +951,7 @@
     var titles = steps.map(function(s){ return s.querySelector('h4').textContent; });
     function activate(i){
       steps.forEach(function(s,n){ s.classList.toggle('active', n===i); });
-      var pct = steps.length>1 ? (i/(steps.length-1))*88 : 0;
+      var pct = steps.length>1 ? (i/(steps.length-1))*75 : 0;
       fill.style.width = pct + '%';
       detail.innerHTML = '<b>' + titles[i] + ' —</b> ' + steps[i].getAttribute('data-detail');
     }
@@ -877,6 +984,32 @@
         }, 180);
         featured.scrollIntoView({behavior:'smooth', block:'center'});
       });
+    });
+  })();
+  /* ---- Back to top: scroll-progress ring + smooth scroll ---- */
+  (function(){
+    var btn = document.getElementById('backToTop');
+    var ring = document.getElementById('ringFg');
+    if(!btn || !ring) return;
+    var r = 19;
+    var circumference = 2 * Math.PI * r;
+    ring.style.strokeDasharray = circumference.toFixed(2);
+    ring.style.strokeDashoffset = circumference.toFixed(2);
+
+    function update(){
+      var doc = document.documentElement;
+      var scrollTop = window.scrollY || doc.scrollTop;
+      var max = (doc.scrollHeight - doc.clientHeight) || 1;
+      var pct = Math.min(1, Math.max(0, scrollTop / max));
+      ring.style.strokeDashoffset = (circumference * (1 - pct)).toFixed(2);
+      btn.classList.toggle('show', scrollTop > 400);
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+
+    btn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
     });
   })();
 </script>
